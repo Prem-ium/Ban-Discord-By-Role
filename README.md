@@ -1,144 +1,135 @@
-<h1 align="center">🚫 Discord Auto Ban Bot 🤖</h1>
+<h1 align="center">🚫 Discord Auto Ban Bot</h1>
 
 <p align="center">
-   Automatically ban users who receive a specific role on your Discord server, and optionally remove all their previous reactions across the server. Built using <b>Node.js</b> and <b>Discord.js v14</b>.
+   A fast, lightweight Discord bot that <strong>automatically bans users</strong> when they are given a specific role. Ideal for keeping flagged, restricted, or suspicious users out of your server.
 </p>
 
-<p align="right"> 
+<p align="center">
    <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
-   <img src="https://img.shields.io/badge/-discord.js-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
+   <img src="https://img.shields.io/badge/discord.js-v14-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
    <a href="https://github.com/sponsors/Prem-ium" target="_blank">
-      <img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA" alt="Github Sponsor"/>
+      <img src="https://img.shields.io/badge/sponsor_me-GitHub-ff69b4?style=for-the-badge&logo=githubsponsors"/>
    </a>
 </p>
 
 ---
 
-This project provides a **Discord moderation automation bot** that bans any member who gains a particular role (such as a flagged, restricted, or suspicious role).
-Optionally, it can also **remove all reactions** that user has made across recent messages — ensuring no trace remains.
+## 🔓 Free Edition
+
+This is the **free and open-source version** of the bot. It includes basic automatic banning functionality with optional reaction cleanup.
+
+> 💎 Want audit-log scanning, multithreaded execution, and CI/CD automation?  
+> **[Sponsor me on GitHub](https://github.com/sponsors/Prem-ium)** to receive access to the **Sponsor Edition** with powerful advanced features!
 
 ---
 
-## ⚙️ Features
+## ✨ Features
 
-✅ Automatically bans users who gain a specific role
-✅ Skips administrators and moderators
-✅ Removes all past reactions from the banned user
-✅ Optional logging to a designated channel
-✅ Lightweight and runs 24/7 via Render, Railway, or Replit
-
----
-
-## 🔧 Installation
-
-1. **Clone this repository and install dependencies**:
-
-   ```bash
-   git clone https://github.com/Prem-ium/ban-discord-by-role.git
-   cd ban-discord-by-role
-   npm install
-   ```
-
-2. **Create a `.env` file** in the project root with:
-
-   ```env
-   DISCORD_TOKEN=YOUR_DISCORD_BOT_TOKEN
-   TARGET_ROLE_ID=ROLE_ID_THAT_TRIGGERS_BAN
-   LOG_CHANNEL_ID=OPTIONAL_LOG_CHANNEL_ID
-   ```
-
-3. **Start your bot locally**:
-
-   ```bash
-   npm start
-   ```
+- ✅ Auto-ban users when a specific role is added
+- 🧹 Optionally remove all their reactions from recent messages
+- 🛡️ Skips bots, admins, and moderators
+- 🪵 Optional logging to a moderation channel
+- ☁️ Deployable to Render, Railway, or Replit
 
 ---
 
-## ☁️ Render Config
+## 📦 Installation
 
-* Connect this GitHub repo
-* Set **Build Command** = `npm install`
-* Set **Start Command** = `npm start`
-* Add the `.env` values under “Environment Variables”
-
----
-
-## ⚙️ Environment Variables
-
-| Variable         | Description                               | Required | Example              |
-| ---------------- | ----------------------------------------- | -------- | -------------------- |
-| `DISCORD_TOKEN`  | Your Discord bot token                    | ✅        | `MTEyMzQ1...`        |
-| `TARGET_ROLE_ID` | Role that triggers an auto-ban when added | ✅        | `123456789012345678` |
-| `LOG_CHANNEL_ID` | Channel ID for logging ban actions        | ❌        | `987654321098765432` |
-
----
-
-## ⚠️ Required Bot Permissions
-
-Your bot **must** have the following permissions in your Discord server:
-
-* 🛡️ `Ban Members`
-* 🗨️ `Read Message History`
-* 🧹 `Manage Messages` (to remove reactions)
-* ⚙️ `View Channels`
-
-Also, ensure these intents are enabled in your **Discord Developer Portal → Bot tab**:
-
-* ✅ Server Members Intent
-* ✅ Message Content Intent *(optional, only if you kept it in code)*
-
----
-
-## 💻 Example Log Output
+### 1. Clone and Install
 
 ```bash
-✅ Logged in as AutoBanBot#1337
-🚫 Banned user123 for gaining role 123456789012345678
-Removed reaction 😎 by user user123 in channel general
-Removed reaction 👍 by user user123 in channel memes
+git clone https://github.com/Prem-ium/ban-discord-by-role.git
+cd ban-discord-by-role
+npm install
+````
+
+### 2. Configure `.env`
+
+Create a `.env` file in the root directory:
+
+```env
+DISCORD_TOKEN=YOUR_DISCORD_BOT_TOKEN
+TARGET_ROLE_ID=ROLE_ID_THAT_TRIGGERS_BAN
+LOG_CHANNEL_ID=OPTIONAL_CHANNEL_ID_FOR_LOGS
+```
+
+### 3. Run the bot
+
+```bash
+npm start
 ```
 
 ---
 
-## 🙋‍♂️ FAQ
+## ☁️ Hosting on Render
 
-### Why would I want to auto-ban users based on a role?
+1. Fork this repo and connect it to [Render](https://render.com/)
+2. Set your environment variables in the "Environment" section
+3. Use the following build and start commands:
 
-This bot is useful for servers where specific roles are automatically assigned to flagged or suspicious users (e.g., verified scammers or restricted accounts). It ensures these users are immediately removed before causing harm.
+```txt
+Build Command: npm install
+Start Command: npm start
+```
 
-### Can this bot remove all user reactions across all time?
+---
 
-Discord’s API doesn’t provide a global list of user reactions. This bot scans the **last 100 messages per text channel** and removes that user’s reactions from them — a practical and rate-limit-safe approach.
+## 🔐 Required Bot Permissions
 
-### What if I just want to log instead of banning?
+Ensure your bot has these permissions in your server:
 
-You can easily modify the code to skip the ban and only log the event (comment out the `newMember.ban()` line).
+* `Ban Members`
+* `Read Message History`
+* `Manage Messages`
+* `View Channels`
+
+And that these **Gateway Intents** are enabled in the Discord Developer Portal:
+
+* ✅ Server Members Intent
+* ✅ Message Content Intent *(optional for reaction removal)*
+
+---
+
+## 📋 Example Output
+
+```bash
+✅ Logged in as AutoModBot#1234
+🚫 Banned TroubleUser#0001 (1234567890): gained restricted role
+🧹 Removed reaction 😎 by user TroubleUser#0001 in #general
+```
+
+---
+
+## 💎 Want More Power?
+
+The **free version** only includes real-time detection of role assignment.
+
+Become a **sponsor** to access the private **Sponsor Edition**, which includes:
+
+* 🕵️‍♂️ Audit Log Scanning: Ban users who ever had the role (even if removed)
+* 🚀 CI/CD Mode: Run moderation automation during deployment pipelines
+* 🧵 Concurrent Cleanup: Multithreaded-style reaction removal and banning
+* 🛑 Rate-limit friendly batching
+* 🧾 Aligned logs with timestamps for better visibility
+
+👉 [Sponsor Me on GitHub to Unlock It](https://github.com/sponsors/Prem-ium)
 
 ---
 
 ## ❤️ Support My Work
 
-If this bot saved you moderation time or kept your server clean, consider supporting my work:
+If you found this bot useful, consider supporting me:
 
-1. **GitHub Sponsors**
-   [![GitHub Sponsor](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge\&logo=GitHub-Sponsors\&logoColor=#EA4AAA)](https://github.com/sponsors/Prem-ium)
-
-2. **Buy Me A Coffee**
-   [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge\&logo=buy-me-a-coffee\&logoColor=black)](https://www.buymeacoffee.com/prem.ium)
-
-3. **Referral Links**
-   Check out my curated [Referral Links](https://github.com/Prem-ium/Referral-Link-Me/blob/main/README.md) for rewards and mutual support.
-
----
-
-## ⚠️ Disclaimer
-
-Use responsibly — banning users automatically can be sensitive and should be done transparently within your moderation policy.
-Always verify role triggers and ensure administrators are excluded to prevent accidental bans.
+* 🙌 **[Sponsor on GitHub](https://github.com/sponsors/Prem-ium)** for access to premium tools
+* ☕ **[Buy Me a Coffee](https://buymeacoffee.com/prem.ium)**
+* 🧾 [Check out my favorite tools & referrals](https://github.com/Prem-ium/Referral-Link-Me)
 
 ---
 
 ## 📜 License
 
-This project is licensed under the [MIT License](https://github.com/Prem-ium/ban-discord-by-role/blob/main/LICENSE).
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+> ⚠️ Always test moderation bots in a safe environment before deploying live. Misconfigured bots can cause unintended bans.
