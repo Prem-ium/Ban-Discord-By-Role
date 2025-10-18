@@ -1,0 +1,13 @@
+{
+  "name": "autoban-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot that bans members who get a specific role.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.15.3"
+  }
+}
+ 
