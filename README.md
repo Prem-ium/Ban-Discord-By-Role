@@ -19,7 +19,7 @@
 This is the **free and open-source version** of the bot. It includes basic automatic banning functionality with optional reaction cleanup.
 
 > 💎 Want audit-log scanning, multithreaded execution, and CI/CD automation?  
-> **[Sponsor me on GitHub](https://github.com/sponsors/Prem-ium)** to receive access to the **Sponsor Edition** with powerful advanced features!
+> **[Sponsor me on GitHub (Gold Tier)](https://github.com/sponsors/Prem-ium/sponsorships?sponsor=Prem-ium&tier_id=308205)** to receive access to the **Sponsor Edition** with powerful advanced features!
 
 ---
 
