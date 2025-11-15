@@ -4,12 +4,11 @@
    A fast, lightweight Discord bot that <strong>automatically bans users</strong> when they are given a specific role. Ideal for keeping flagged, restricted, or suspicious users out of your server.
 </p>
 
-<p align="center">
+<p align="right">
    <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
    <img src="https://img.shields.io/badge/discord.js-v14-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
-   <a href="https://github.com/sponsors/Prem-ium" target="_blank">
-      <img src="https://img.shields.io/badge/sponsor_me-GitHub-ff69b4?style=for-the-badge&logo=githubsponsors"/>
-   </a>
+<a href="https://github.com/sponsors/Prem-ium" target="_blank">
+        <img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AA" alt="Github Sponsor"/></a>
 </p>
 
 ---
